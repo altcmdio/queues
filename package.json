@@ -1,0 +1,13 @@
+{
+  "name": "queues",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "ctrl@altcmd.io <ctrl@altcmd.io>",
+  "license": "ISC",
+  "dependencies": {
+    "bull": "3.14.0"
+  }
+}
