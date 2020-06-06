@@ -2,11 +2,20 @@
  *
  */
 
+const defaults = {
+  names: [],
+  redis: 'redis://127.0.0.1:6379',
+  bull: {}
+}
+
 const Bull = require('bull')
 
-module.exports = Queues = (names = [], redis = 'redis://127.0.0.1:6379') => {
+module.exports = Queues = (o = {}) => {
+  const { names, redis, bull } = { ...defaults, ...o }
+  // if (!Array.isArray(names))
+  //   throw new Error('Queue names should be provided as an array.')
   const db = redis + '/0'
-  const queues = names.map(name => new Bull(name, db))
+  const queues = names.map(name => new Bull(name, db, bull))
 
   /** */
   const list = () => queues.map(q => q.name)

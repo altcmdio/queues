@@ -3,11 +3,16 @@
   "version": "1.0.1",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "dev": "nodemon --watch dev.js --watch index.js dev.js"
+  },
   "keywords": [],
   "author": "ctrl@altcmd.io <ctrl@altcmd.io>",
   "license": "ISC",
   "dependencies": {
     "bull": "3.14.0"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.4"
   }
 }
